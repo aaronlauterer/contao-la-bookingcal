@@ -30,10 +30,10 @@
 /**
  * Miscellaneous
  */
-$GLOBALS['TL_LANG']['MOD']['bookingcal'] = array('Belegungskalender', 'Belegungen von Objekten wie zum Beispiel Ferienhäusern verwalten.');
+$GLOBALS['TL_LANG']['MOD']['la_bookingcal'] = array('Belegungskalender', 'Belegungen von Objekten wie zum Beispiel Ferienhäusern verwalten.');
 
 
-$GLOBALS['TL_LANG']['FMD']['bookingcal'] = array('Belegungskalender', 'fügt der Seite einen Belegungskalender hinzu.');
+$GLOBALS['TL_LANG']['FMD']['la_bookingcal'] = array('Belegungskalender', 'fügt der Seite einen Belegungskalender hinzu.');
 
 
 ?>

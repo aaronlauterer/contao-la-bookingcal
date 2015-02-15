@@ -30,8 +30,8 @@
 /**
  * Miscellaneous
  */
-$GLOBALS['TL_LANG']['MSC']['bookingcal_full']     = 'Voll';
-$GLOBALS['TL_LANG']['MSC']['bookingcal_change']   = 'Wechsel';
-$GLOBALS['TL_LANG']['MSC']['bookingcal_free']     = 'Frei';
+$GLOBALS['TL_LANG']['MSC']['la_bookingcal_full']     = 'Voll';
+$GLOBALS['TL_LANG']['MSC']['la_bookingcal_change']   = 'Wechsel';
+$GLOBALS['TL_LANG']['MSC']['la_bookingcal_free']     = 'Frei';
 
 ?>

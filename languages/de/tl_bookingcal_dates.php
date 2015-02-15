@@ -21,7 +21,7 @@
  * PHP version 5
  * @copyright  Aaron Lauterer 2009 
  * @author     Aaron Lauterer aaron@lauterer.at 
- * @package    bookingcal 
+ * @package    la_bookingcal 
  * @license    LGPL 
  * @filesource
  */
@@ -30,31 +30,31 @@
 /**
  * Miscellaneous
  */
-$GLOBALS['TL_LANG']['tl_bookingcal_dates']['startDate']				= array('Beginn','Beginn der Buchung.');
-$GLOBALS['TL_LANG']['tl_bookingcal_dates']['endDate']				= array('Ende','Ende der Buchung.');
-$GLOBALS['TL_LANG']['tl_bookingcal_dates']['startFull']				= array('Ganzer Tag Beginn','Der erste Tag wird komplett gebucht, ohne wechsel.');
-$GLOBALS['TL_LANG']['tl_bookingcal_dates']['endFull']				= array('Ganzer Tag Ende','Der letzte Tag wird komplett gebucht, ohne wechsel.');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['startDate']				= array('Beginn','Beginn der Buchung.');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endDate']				= array('Ende','Ende der Buchung.');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['startFull']				= array('Ganzer Tag Beginn','Der erste Tag wird komplett gebucht, ohne wechsel.');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull']				= array('Ganzer Tag Ende','Der letzte Tag wird komplett gebucht, ohne wechsel.');
 
 
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_bookingcal_dates']['title_legend']		= 'Zeitraum';
-$GLOBALS['TL_LANG']['tl_bookingcal_dates']['full_legend']		= 'Ganze Tage';
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['title_legend']		= 'Zeitraum';
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['full_legend']		= 'Ganze Tage';
 
 
 /**
  * Error MSGs
  */
-$GLOBALS['TL_LANG']['tl_bookingcal_dates']['dateCollision']		= 'Überschneidet sich mit anderen Buchungen.';
-$GLOBALS['TL_LANG']['tl_bookingcal_dates']['dateWithinRange']	= '%s Buchung(en) befinden sich in diesem Zeitraum.';
-$GLOBALS['TL_LANG']['tl_bookingcal_dates']['endDatebefore']		= 'Das Enddatum kann nicht vor dem Startdatum liegen.';
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['dateCollision']		= 'Überschneidet sich mit anderen Buchungen.';
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['dateWithinRange']	= '%s Buchung(en) befinden sich in diesem Zeitraum.';
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endDatebefore']		= 'Das Enddatum kann nicht vor dem Startdatum liegen.';
 /**
  * Buttons
  */
-$GLOBALS['TL_LANG']['tl_bookingcal_dates']['new']   				= array('Neue Belegung', 'Eine neue Belegung erstellen.');
-$GLOBALS['TL_LANG']['tl_bookingcal_dates']['copy']				= array('Kopieren', 'Belegung ID %s kopieren');
-$GLOBALS['TL_LANG']['tl_bookingcal_dates']['edit']				= array('Bearbeiten', 'Belegung ID %s bearbeiten');
-$GLOBALS['TL_LANG']['tl_bookingcal_dates']['delete']				= array('Löschen', 'Belegung ID %s löschen');
-$GLOBALS['TL_LANG']['tl_bookingcal_dates']['show']				= array('Informationen', 'Informationen zu Belegung ID %s anzeigen');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['new']   				= array('Neue Belegung', 'Eine neue Belegung erstellen.');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['copy']				= array('Kopieren', 'Belegung ID %s kopieren');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['edit']				= array('Bearbeiten', 'Belegung ID %s bearbeiten');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['delete']				= array('Löschen', 'Belegung ID %s löschen');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['show']				= array('Informationen', 'Informationen zu Belegung ID %s anzeigen');
 ?>

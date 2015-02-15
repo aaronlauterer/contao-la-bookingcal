@@ -21,7 +21,7 @@
  * PHP version 5
  * @copyright  Aaron Lauterer 2009 
  * @author     Aaron Lauterer aaron@lauterer.at 
- * @package    bookingcal 
+ * @package    la_bookingcal 
  * @license    LGPL 
  * @filesource
  */
@@ -30,7 +30,7 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_module']['bookingcal_object']		= array('Object','Object of which booking should be displayed.');
-$GLOBALS['TL_LANG']['tl_module']['bookingcal_years']		= array('Number of years','Years to show additionally to the current.');
+$GLOBALS['TL_LANG']['tl_module']['la_bookingcal_object']		= array('Object','Object of which booking should be displayed.');
+$GLOBALS['TL_LANG']['tl_module']['la_bookingcal_years']		= array('Number of years','Years to show additionally to the current.');
 
 ?>

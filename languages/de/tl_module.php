@@ -30,7 +30,7 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_module']['bookingcal_object']		= array('Objekt','Das Objekt dessen Belegung angezeigt werden soll.');
-$GLOBALS['TL_LANG']['tl_module']['bookingcal_years']		= array('Anzahl Jahre','Wieviel Jahre zum aktuellen zusätzlich angezeigt werden.');
+$GLOBALS['TL_LANG']['tl_module']['la_bookingcal_object']		= array('Objekt','Das Objekt dessen Belegung angezeigt werden soll.');
+$GLOBALS['TL_LANG']['tl_module']['la_bookingcal_years']		= array('Anzahl Jahre','Wieviel Jahre zum aktuellen zusätzlich angezeigt werden.');
 
 ?>
