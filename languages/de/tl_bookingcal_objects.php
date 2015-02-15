@@ -21,7 +21,7 @@
  * PHP version 5
  * @copyright  Aaron Lauterer 2009 
  * @author     Aaron Lauterer aaron@lauterer.at 
- * @package    bookingcal 
+ * @package    la_bookingcal 
  * @license    LGPL 
  * @filesource
  */
@@ -30,22 +30,22 @@
 /**
  * Miscellaneous
  */
-$GLOBALS['TL_LANG']['tl_bookingcal_objects']['name']				= array('Name','Name des Objektes.');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_objects']['name']				= array('Name','Name des Objektes.');
 
 
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_bookingcal_objects']['title_legend']		= 'Name';
+$GLOBALS['TL_LANG']['tl_la_bookingcal_objects']['title_legend']		= 'Name';
 
 
 /**
  * Buttons
  */
-$GLOBALS['TL_LANG']['tl_bookingcal_objects']['new']   				= array('Neues Objekt', 'Ein neues Objekt erstellen');
-$GLOBALS['TL_LANG']['tl_bookingcal_objects']['copy']				= array('Kopieren', 'Objekt ID %s kopieren');
-$GLOBALS['TL_LANG']['tl_bookingcal_objects']['edit']				= array('Bearbeiten', 'Objekt ID %s bearbeiten');
-$GLOBALS['TL_LANG']['tl_bookingcal_objects']['delete']				= array('Löschen', 'Objekt ID %s löschen');
-$GLOBALS['TL_LANG']['tl_bookingcal_objects']['show']				= array('Informationen', 'Informationen zu Objekt ID %s anzeigen');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_objects']['new']   				= array('Neues Objekt', 'Ein neues Objekt erstellen');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_objects']['copy']				= array('Kopieren', 'Objekt ID %s kopieren');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_objects']['edit']				= array('Bearbeiten', 'Objekt ID %s bearbeiten');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_objects']['delete']				= array('Löschen', 'Objekt ID %s löschen');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_objects']['show']				= array('Informationen', 'Informationen zu Objekt ID %s anzeigen');
 
 ?>

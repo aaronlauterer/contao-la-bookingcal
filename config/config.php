@@ -21,7 +21,7 @@
  * PHP version 5
  * @copyright  Aaron Lauterer 2009 
  * @author     Aaron Lauterer aaron@lauterer.at 
- * @package    bookingcal 
+ * @package    la_bookingcal 
  * @license    LGPL 
  * @filesource
  */
@@ -29,10 +29,10 @@
  
 array_insert($GLOBALS['BE_MOD']['content'], 2, array
 (
-	'bookingcal' => array
+	'la_bookingcal' => array
 	(
-		'tables'     => array('tl_bookingcal_objects', 'tl_bookingcal_dates'),
-		'icon'       => 'system/modules/bookingcal/html/icon.gif'
+		'tables'     => array('tl_la_bookingcal_objects', 'tl_la_bookingcal_dates'),
+		'icon'       => 'system/modules/la_bookingcal/html/icon.gif'
 	)
 ));
  
@@ -41,15 +41,15 @@ array_insert($GLOBALS['BE_MOD']['content'], 2, array
  */
 array_insert($GLOBALS['FE_MOD'], 9, array
 (
-	'bookingcal' => array
+	'la_bookingcal' => array
 	(
-		'bookingcal'        => 'ModuleBookingcal'
+		'la_bookingcal'        => 'ModuleBookingcal'
 	)
 ));
 
 /**
  * CSS Files
  */
-$GLOBALS['TL_CSS'][] = 'system/modules/bookingcal/html/bookingcal.css|screen,handheld,print'; 
+$GLOBALS['TL_CSS'][] = 'system/modules/la_bookingcal/html/bookingcal.css|screen,handheld,print'; 
  
 ?>

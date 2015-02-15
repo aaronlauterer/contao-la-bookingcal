@@ -21,7 +21,7 @@
  * PHP version 5
  * @copyright  Aaron Lauterer 2009
  * @author     Aaron Lauterer
- * @package    bookingcal
+ * @package    la_bookingcal
  * @license    LGPL
  * @filesource
  */
@@ -30,8 +30,8 @@
 /**
  * Miscellaneous
  */
-$GLOBALS['TL_LANG']['MSC']['bookingcal_full']     = 'Full';
-$GLOBALS['TL_LANG']['MSC']['bookingcal_change']   = 'Change';
-$GLOBALS['TL_LANG']['MSC']['bookingcal_free']     = 'Free';
+$GLOBALS['TL_LANG']['MSC']['la_bookingcal_full']     = 'Full';
+$GLOBALS['TL_LANG']['MSC']['la_bookingcal_change']   = 'Change';
+$GLOBALS['TL_LANG']['MSC']['la_bookingcal_free']     = 'Free';
 
 ?>

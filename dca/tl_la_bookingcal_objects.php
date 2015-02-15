@@ -21,16 +21,16 @@
  * PHP version 5
  * @copyright  Aaron Lauterer 2009 
  * @author     Aaron Lauterer aaron@lauterer.at 
- * @package    bookingcal 
+ * @package    la_bookingcal 
  * @license    LGPL 
  * @filesource
  */
 
 
 /**
- * Table tl_bookingcal_objects 
+ * Table tl_la_bookingcal_objects 
  */
-$GLOBALS['TL_DCA']['tl_bookingcal_objects'] = array
+$GLOBALS['TL_DCA']['tl_la_bookingcal_objects'] = array
 (
 
 	// Config
@@ -38,9 +38,21 @@ $GLOBALS['TL_DCA']['tl_bookingcal_objects'] = array
 	(
 		'dataContainer'               => 'Table',
 		'enableVersioning'            => true,
-		'ctable'					  => array('tl_bookingcal_dates'),
+		'ctable'					  => array('tl_la_bookingcal_dates'),
 		'switchToEdit'                => true,
-		'enableVersioning'            => true		
+		'enableVersioning'            => true,
+        'sql' => array
+		(
+
+			'keys' => array
+
+			(
+
+				'id' => 'primary'
+
+			)
+
+		),        
 	),
 
 	// List
@@ -72,26 +84,26 @@ $GLOBALS['TL_DCA']['tl_bookingcal_objects'] = array
 		(
 			'edit' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_bookingcal_objects']['edit'],
-				'href'                => 'table=tl_bookingcal_dates',
+				'label'               => &$GLOBALS['TL_LANG']['tl_la_bookingcal_objects']['edit'],
+				'href'                => 'table=tl_la_bookingcal_dates',
 				'icon'                => 'edit.gif'
 			),
 			'copy' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_bookingcal_objects']['copy'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_la_bookingcal_objects']['copy'],
 				'href'                => 'act=copy',
 				'icon'                => 'copy.gif'
 			),
 			'delete' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_bookingcal_objects']['delete'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_la_bookingcal_objects']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.gif',
 				'attributes'          => 'onclick="if (!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\')) return false; Backend.getScrollOffset();"'
 			),
 			'show' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_bookingcal_objects']['show'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_la_bookingcal_objects']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.gif'
 			)
@@ -114,12 +126,21 @@ $GLOBALS['TL_DCA']['tl_bookingcal_objects'] = array
 	// Fields
 	'fields' => array
 	(
+        'id' => array
+		(
+			'sql'                     => "int(10) unsigned NOT NULL auto_increment"
+		),
+		'tstamp' => array
+		(
+			'sql'                     => "int(10) unsigned NOT NULL default '0'"
+		),
 		'name' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_bookingcal_objects']['name'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_la_bookingcal_objects']['name'],
 			'exclude'				  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true,'unique'=>true, 'maxlength'=>255)
+			'eval'                    => array('mandatory'=>true,'unique'=>true, 'maxlength'=>255),
+            'sql'                       => "varchar(255) NOT NULL default ''"
 		)
 	)
 );

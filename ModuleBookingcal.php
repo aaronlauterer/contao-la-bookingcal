@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
  * TYPOlight webCMS
@@ -34,14 +34,17 @@
  * @author     Aaron Lauterer aaron@lauterer.at 
  * @package    Controller
  */
-class ModuleBookingcal extends Module
+ 
+namespace Contao;
+ 
+class ModuleBookingcal extends \Module
 {
 
 	/**
 	 * Template
 	 * @var string
 	 */
-	protected $strTemplate = 'mod_bookingcal';
+	protected $strTemplate = 'mod_la_bookingcal';
 	
 	/**
 	 * Year
@@ -57,13 +60,13 @@ class ModuleBookingcal extends Module
 	{
 		if (TL_MODE == 'BE')
 		{
-			$objTemplate = new BackendTemplate('be_wildcard');
+            $objTemplate = new \BackendTemplate('be_wildcard');
 
-			$objTemplate->wildcard = '### '.$GLOBALS['TL_LANG']['FMD']['bookingcal'][0].' ###';
+			$objTemplate->wildcard = '### '.$GLOBALS['TL_LANG']['FMD']['la_bookingcal'][0].' ###';
 			$objTemplate->title = $this->headline;
 			$objTemplate->id = $this->id;
 			$objTemplate->link = $this->name;
-			$objTemplate->href = 'typolight/main.php?do=modules&amp;act=edit&amp;id=' . $this->id;
+			$objTemplate->href = 'contao/main.php?do=themes&amp;table=tl_module&amp;act=edit&amp;id=' . $this->id;
 
 			return $objTemplate->parse();
 		}
@@ -78,17 +81,17 @@ class ModuleBookingcal extends Module
 	protected function compile()
 	{
         $year=date('Y');
-        $object = deserialize($this->bookingcal_object);
+        $object = $this->la_bookingcal_object;
         
-	    for($i=0;$i<=$this->bookingcal_years;$i++)
+	    for($i=0;$i<=$this->la_bookingcal_years;$i++)
 	    {    
-            $objTemplate = new FrontendTemplate($this->bookingcal_template);	
+            $objTemplate = new FrontendTemplate($this->la_bookingcal_template);	
     
             // Set timestamps to the beginning and end of the year
             $yearStart=mktime(0,0,0,1,1,$year);
             $yearEnd=mktime(0,0,0,12,31,$year);
             
-            $objDates = $this->Database->prepare("SELECT id,startDate,endDate,startFull,endFull FROM tl_bookingcal_dates WHERE pid=? AND (endDate >=? AND startDate <= ?) ORDER BY endDate")
+            $objDates = $this->Database->prepare("SELECT id,startDate,endDate,startFull,endFull FROM tl_la_bookingcal_dates WHERE pid=? AND (endDate >=? AND startDate <= ?) ORDER BY endDate")
                              ->execute($object,$yearStart,$yearEnd);
             $objTemplate->year=$year;
             

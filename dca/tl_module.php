@@ -30,37 +30,40 @@
 /**
  * Add palettes to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['bookingcal']        = '{title_legend},name,headline,type;{config_legend},bookingcal_object,bookingcal_years;{template_legend:hide},bookingcal_template;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['la_bookingcal']        = '{title_legend},name,headline,type;{config_legend},la_bookingcal_object,la_bookingcal_years;{template_legend:hide},la_bookingcal_template;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 
 /**
  * Add fields to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['fields']['bookingcal_object'] = array
+$GLOBALS['TL_DCA']['tl_module']['fields']['la_bookingcal_object'] = array
 (
-	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['bookingcal_object'],
+	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['la_bookingcal_object'],
 	'exclude'                 => true,
 	'inputType'               => 'radio',
-	'options_callback'        => array('tl_module_bookingcal', 'getObjects'),
-	'eval'                    => array('mandatory'=>true, 'multiple'=>true)
+	'options_callback'        => array('tl_module_la_bookingcal', 'getObjects'),
+	'eval'                    => array('mandatory'=>true, 'multiple'=>true),
+    'sql'                     => "int(10) unsigned NULL"
 );
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['bookingcal_years'] = array
+$GLOBALS['TL_DCA']['tl_module']['fields']['la_bookingcal_years'] = array
 (
-	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['bookingcal_years'],
+	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['la_bookingcal_years'],
 	'exclude'                 => true,
 	'inputType'               => 'text',
-	'eval'                    => array('rgxp'=>'digit', 'tl_class'=>'w50')
+	'eval'                    => array('rgxp'=>'digit', 'tl_class'=>'w50'),
+    'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
 );
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['bookingcal_template'] = array
+$GLOBALS['TL_DCA']['tl_module']['fields']['la_bookingcal_template'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['cal_template'],
-	'default'                 => 'bookingcal_standard',
+	'default'                 => 'la_bookingcal_standard',
 	'exclude'                 => true,
 	'inputType'               => 'select',
-	'options'                 => $this->getTemplateGroup('bookingcal_'),
-	'eval'                    => array('tl_class'=>'w50')
+	'options'                 => $this->getTemplateGroup('la_bookingcal_'),
+	'eval'                    => array('tl_class'=>'w50'),
+    'sql'                     => "varchar(32) NOT NULL default ''"
 );
 
 
@@ -73,7 +76,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['bookingcal_template'] = array
  * @author     Leo Feyer <http://www.typolight.org>
  * @package    Controller
  */
-class tl_module_bookingcal extends Backend
+class tl_module_la_bookingcal extends Backend
 {
 
 	/**
@@ -98,7 +101,7 @@ class tl_module_bookingcal extends Backend
 		}
 
 		$arrForms = array();
-		$objForms = $this->Database->execute("SELECT id, name FROM tl_bookingcal_objects ORDER BY name");
+		$objForms = $this->Database->execute("SELECT id, name FROM tl_la_bookingcal_objects ORDER BY name");
 
 		while ($objForms->next())
 		{
