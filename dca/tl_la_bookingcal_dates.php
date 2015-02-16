@@ -58,11 +58,11 @@ $GLOBALS['TL_DCA']['tl_la_bookingcal_dates'] = array
 			'headerFields'			  => array('name'),
 			'flag'                    => 1,
 			'child_record_callback'   => array('tl_la_bookingcal_dates', 'la_bookingcal_display'),
-			'panelLayout'             => 'filter;sort;limit',
+			'panelLayout'             => 'filter;sort,search,limit',
 		),
 		'label' => array
 		(
-			'fields'                  => array('startDate,endDate'),
+			'fields'                  => array('startDate,endDate,comment'),
 			'format'                  => '%s'
 		),
 		'global_operations' => array
@@ -109,7 +109,7 @@ $GLOBALS['TL_DCA']['tl_la_bookingcal_dates'] = array
 	'palettes' => array
 	(
 		'__selector__'                => array(''),
-		'default'                     => '{title_legend},startDate,endDate;{full_legend},startFull,endFull'
+		'default'                     => '{title_legend},startDate,endDate;{full_legend},startFull,endFull;{comment_legend},comment'
 	),
 
 	// Subpalettes
@@ -137,8 +137,8 @@ $GLOBALS['TL_DCA']['tl_la_bookingcal_dates'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['startDate'],
 			'default'                 => time(),
-			'exclude'                 => true,
 			'filter'                  => true,
+            'sorting'                    => true,
 			'flag'                    => 8,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory' => true, 'rgxp'=>'date', 'datepicker'=>$this->getDatePickerString(), 'tl_class'=>'w50 wizard'),
@@ -153,8 +153,8 @@ $GLOBALS['TL_DCA']['tl_la_bookingcal_dates'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endDate'],
 			'default'                 => time(),
-			'exclude'                 => true,
 			'filter'                  => true,
+            'sorting'                    => true,
 			'flag'                    => 8,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory' => true, 'rgxp'=>'date', 'datepicker'=>$this->getDatePickerString(), 'tl_class'=>'w50 wizard'),
@@ -167,7 +167,6 @@ $GLOBALS['TL_DCA']['tl_la_bookingcal_dates'] = array
 		'startFull' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['startFull'],
-			'exclude'                 => true,
 			'filter'                  => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50 m12'),
@@ -176,11 +175,19 @@ $GLOBALS['TL_DCA']['tl_la_bookingcal_dates'] = array
 		'endFull' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull'],
-			'exclude'                 => true,
 			'filter'                  => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50 m12'),
             'sql'                     => "char(1) NOT NULL default ''"
+		),
+        'comment' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['comment'],
+			'search'                  => true,
+            'sorting'                    => true,
+			'inputType'               => 'text',
+			'eval'                    => array('maxlength'=> 255, 'rgxp'=>'alphanum'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
 		)
 
 	)
@@ -205,6 +212,15 @@ class tl_la_bookingcal_dates extends Backend
 	 */
 	public function la_bookingcal_display($arrRow)
 	{
+        /**
+		 *	Format comment
+		 */
+		
+		if (!empty($arrRow['comment']))
+			$comment='<i style="margin-left: 20px; font-weight: normal">'.$arrRow['comment'].'</i>';
+		else
+			$comment='';
+        
 		/**
 		 * Show Image according if the full day is used or not
 		 */
@@ -216,7 +232,7 @@ class tl_la_bookingcal_dates extends Backend
 		$endImage=($arrRow['endFull']) ? '<img src="'.$GLOBALS['TL_CONFIG']['websitePath'].'/system/themes/'.$GLOBALS['TL_CONFIG']['backendTheme'].'/images/ok.gif" alt="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['yes'].'" title="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['yes'].'" class="tl_la_bookingcal_fullicon" />' : '<img src="'.$GLOBALS['TL_CONFIG']['websitePath'].'/system/themes/'.$GLOBALS['TL_CONFIG']['backendTheme'].'/images/delete_.gif" alt="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['no'].'" title="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['no'].'" class="tl_la_bookingcal_fullicon" />';
 
 	
-		return '<div class="cte_type"><h1>'.$this->parseDate($GLOBALS['TL_CONFIG']['dateFormat'],$arrRow['startDate']).$startImage.' - '.$this->parseDate($GLOBALS['TL_CONFIG']['dateFormat'],$arrRow['endDate']).$endImage.'</h1></div>'."\n";
+		return '<div class="cte_type"><h1>'.$this->parseDate($GLOBALS['TL_CONFIG']['dateFormat'],$arrRow['startDate']).$startImage.' - '.$this->parseDate($GLOBALS['TL_CONFIG']['dateFormat'],$arrRow['endDate']).$endImage.$comment.'</h1></div>'."\n";
 	}
 	
 	/**

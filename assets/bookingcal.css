@@ -1,23 +1,23 @@
 tl/**
  * CSS File for TYPOlight extension "bookingcal"
  */
- .bookingcal_year
+ .la_bookingcal_year
  {
     margin: 10px 0;
  }
  
-.bookingcal_year ol
+.la_bookingcal_year ol
 {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
-.bookingcal_year .months > li
+.la_bookingcal_year .months > li
 {
     display: block;
     clear: left;
 }
-.bookingcal_year .months span
+.la_bookingcal_year .months span
 {
     float: left;
     width: 100px;
@@ -25,28 +25,28 @@ tl/**
     clear: both;
 	display: block;
 }
-.bookingcal_year .days
+.la_bookingcal_year .days
 {
 	float: left;
 	margin: 0 0 1px 0;
 }
-.bookingcal_year .days li
+.la_bookingcal_year .days li
 {
     float: left;
     padding: 2px 1px;
 	margin: 0 1px 0 0;
-    width: 14px;
+    min-width: 14px;
     text-align: center;
 }
-.bookingcal_year .days li.full
+.la_bookingcal_year .days li.full
 {
     background-color: #FF2C2C;
 }
-.bookingcal_year .days li.change
+.la_bookingcal_year .days li.change
 {
     background-color: #FFB900;
 }
-.bookingcal_year .days li.free
+.la_bookingcal_year .days li.free
 {
 	background-color: #6DE326;
 }

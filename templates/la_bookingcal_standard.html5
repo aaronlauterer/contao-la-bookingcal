@@ -1,4 +1,4 @@
-<div class="block bookingcal_year">
+<div class="block la_bookingcal_year">
 <h2><?php echo $this->year; ?></h2>
 <ol class="months">
     <?php foreach($this->months as $monthkey => $month): ?>

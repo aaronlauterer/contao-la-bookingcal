@@ -32,7 +32,7 @@ array_insert($GLOBALS['BE_MOD']['content'], 2, array
 	'la_bookingcal' => array
 	(
 		'tables'     => array('tl_la_bookingcal_objects', 'tl_la_bookingcal_dates'),
-		'icon'       => 'system/modules/la_bookingcal/html/icon.gif'
+		'icon'       => 'system/modules/la_bookingcal/assets/icon.gif'
 	)
 ));
  
@@ -50,6 +50,6 @@ array_insert($GLOBALS['FE_MOD'], 9, array
 /**
  * CSS Files
  */
-$GLOBALS['TL_CSS'][] = 'system/modules/la_bookingcal/html/bookingcal.css|screen,handheld,print'; 
+$GLOBALS['TL_CSS'][] = 'system/modules/la_bookingcal/assets/bookingcal.css|screen,handheld,print'; 
  
 ?>

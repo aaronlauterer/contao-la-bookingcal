@@ -73,13 +73,15 @@ $GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['startDate']				= array('Start','S
 $GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endDate']				= array('End','End of the booking.');
 $GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['startFull']				= array('Full day start','The whole first day will be booked, no change.');
 $GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull']				= array('Full day end','The whole last day will be booked, no change.');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['comment']				    = array('Comment','Notes for the booking.');
 
 
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['title_legend']		= 'Period';
-$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['full_legend']		= 'Full Days';
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['title_legend']		    = 'Period';
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['full_legend']		    = 'Full Days';
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['comment_legend']	        = 'Comment';
 
 
 /**
