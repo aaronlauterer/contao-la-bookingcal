@@ -102,6 +102,12 @@ class ModuleBookingcal extends \Module
             $year++;
         }
         $this->Template->bookingcal = $strBookings;	
+        
+        // Get object name to include in the CSS classes
+        $objName = $this->Database->prepare("SELECT name FROM tl_la_bookingcal_objects WHERE id=?")
+                             ->execute($object);
+        $this->Template->objectName = 'la_'.strtolower(str_replace(' ','-',$objName->fetchAllAssoc()[0]['name']));
+        
 	}
 	
 	/**
