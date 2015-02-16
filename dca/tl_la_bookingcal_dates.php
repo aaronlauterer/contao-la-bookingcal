@@ -221,15 +221,27 @@ class tl_la_bookingcal_dates extends Backend
 		else
 			$comment='';
         
+        /**
+         * Get Theme
+         */
+        if($GLOBALS['TL_CONFIG']['backendTheme'] == '')
+        {
+            $theme = 'default';
+        }
+        else
+        {
+            $theme = $GLOBALS['TL_CONFIG']['backendTheme'];
+        }
+        
 		/**
 		 * Show Image according if the full day is used or not
 		 */
-		$startImage=($arrRow['startFull']) ? '<img src="'.$GLOBALS['TL_CONFIG']['websitePath'].'/system/themes/'.$GLOBALS['TL_CONFIG']['backendTheme'].'/images/ok.gif" alt="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['startFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['yes'].'" title="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['startFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['yes'].'" class="tl_la_bookingcal_fullicon" />' : '<img src="'.$GLOBALS['TL_CONFIG']['websitePath'].'/system/themes/'.$GLOBALS['TL_CONFIG']['backendTheme'].'/images/delete_.gif" alt="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['startFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['no'].'" title="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['startFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['no'].'" class="tl_la_bookingcal_fullicon" />';
+		$startImage=($arrRow['startFull']) ? '<img src="'.$GLOBALS['TL_CONFIG']['websitePath'].'/system/themes/'.$theme.'/images/ok.gif" alt="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['startFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['yes'].'" title="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['startFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['yes'].'" class="tl_la_bookingcal_fullicon" />' : '<img src="'.$GLOBALS['TL_CONFIG']['websitePath'].'/system/themes/'.$theme.'/images/delete_.gif" alt="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['startFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['no'].'" title="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['startFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['no'].'" class="tl_la_bookingcal_fullicon" />';
 		
 		/**
 		 * Show Image according if the full day is used or not
 		 */
-		$endImage=($arrRow['endFull']) ? '<img src="'.$GLOBALS['TL_CONFIG']['websitePath'].'/system/themes/'.$GLOBALS['TL_CONFIG']['backendTheme'].'/images/ok.gif" alt="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['yes'].'" title="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['yes'].'" class="tl_la_bookingcal_fullicon" />' : '<img src="'.$GLOBALS['TL_CONFIG']['websitePath'].'/system/themes/'.$GLOBALS['TL_CONFIG']['backendTheme'].'/images/delete_.gif" alt="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['no'].'" title="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['no'].'" class="tl_la_bookingcal_fullicon" />';
+		$endImage=($arrRow['endFull']) ? '<img src="'.$GLOBALS['TL_CONFIG']['websitePath'].'/system/themes/'.$theme.'/images/ok.gif" alt="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['yes'].'" title="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['yes'].'" class="tl_la_bookingcal_fullicon" />' : '<img src="'.$GLOBALS['TL_CONFIG']['websitePath'].'/system/themes/'.$theme.'/images/delete_.gif" alt="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['no'].'" title="'.$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endFull'][0].' '.$GLOBALS['TL_LANG']['MSC']['no'].'" class="tl_la_bookingcal_fullicon" />';
 
 	
 		return '<div class="cte_type"><h1>'.$this->parseDate($GLOBALS['TL_CONFIG']['dateFormat'],$arrRow['startDate']).$startImage.' - '.$this->parseDate($GLOBALS['TL_CONFIG']['dateFormat'],$arrRow['endDate']).$endImage.$comment.'</h1></div>'."\n";
