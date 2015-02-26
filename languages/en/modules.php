@@ -31,8 +31,8 @@
 /**
  * Miscellaneous
  */
-$GLOBALS['TL_LANG']['MOD']['la_bookingcal'] = array('Bookingcalendar', 'Manage bookings for objects like a holiday house.');
-$GLOBALS['TL_LANG']['FMD']['la_bookingcal'] = array('Bookingcalendar', 'adds a la_bookingcalendar to the page.');
+$GLOBALS['TL_LANG']['MOD']['la_bookingcal'] = array('Booking Calendar', 'Manage bookings for objects like a holiday house.');
+$GLOBALS['TL_LANG']['FMD']['la_bookingcal'] = array('Booking Calendar', 'adds a booking calendar to the page.');
 
 
 /**

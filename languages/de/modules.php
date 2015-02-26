@@ -93,9 +93,9 @@ $GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['endDatebefore']		= 'Das Enddatum 
 /**
  * Buttons
  */
-$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['new']   				= array('Neue Belegung', 'Eine neue Belegung erstellen.');
-$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['copy']				= array('Kopieren', 'Belegung ID %s kopieren');
-$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['edit']				= array('Bearbeiten', 'Belegung ID %s bearbeiten');
-$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['delete']				= array('Löschen', 'Belegung ID %s löschen');
-$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['show']				= array('Informationen', 'Informationen zu Belegung ID %s anzeigen');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['new']   				= array('Neue Buchung', 'Eine neue Buchung erstellen.');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['copy']				= array('Kopieren', 'Buchung ID %s kopieren');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['edit']				= array('Bearbeiten', 'Buchung ID %s bearbeiten');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['delete']				= array('Löschen', 'Buchung ID %s löschen');
+$GLOBALS['TL_LANG']['tl_la_bookingcal_dates']['show']				= array('Informationen', 'Informationen zu Buchung ID %s anzeigen');
 ?>

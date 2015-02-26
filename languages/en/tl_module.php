@@ -32,6 +32,7 @@
  * Fields
  */
 $GLOBALS['TL_LANG']['tl_module']['la_bookingcal_object']		= array('Object','Object of which booking should be displayed.');
-$GLOBALS['TL_LANG']['tl_module']['la_bookingcal_years']		= array('Number of years','Years to show additionally to the current.');
+$GLOBALS['TL_LANG']['tl_module']['la_bookingcal_years']		    = array('Number of years','Years to show additionally to the current.');
+$GLOBALS['TL_LANG']['tl_module']['la_bookingcal_template']      = array('Booking calendar template','Here you can select the booking calendar template.');
 
 ?>

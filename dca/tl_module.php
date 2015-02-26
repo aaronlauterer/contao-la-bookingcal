@@ -58,7 +58,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['la_bookingcal_years'] = array
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['la_bookingcal_template'] = array
 (
-	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['cal_template'],
+	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['la_bookingcal_template'],
 	'default'                 => 'la_bookingcal_standard',
 	'exclude'                 => true,
 	'inputType'               => 'select',
